@@ -1,38 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0; /* Thay đổi màu nền */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Đặt chiều cao của body là 100% chiều cao của viewport */
+}
+
 .App {
   text-align: center;
+  max-width: 800px; /* Đặt khung rộng hơn */
+  width: 100%; /* Chắc chắn rằng khung không vượt quá kích thước tối đa */
+  padding: 0 15px; /* Thêm khoảng trắng bên trái và bên phải để giữ nội dung không quá rộng */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #333; /* Thay đổi màu chữ */
+  margin-bottom: 1rem; /* Tăng khoảng cách dưới */
+  font-size: 2rem; /* Tăng kích thước chữ */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TodoWrapper {
+  background: #fff; /* Thay đổi màu nền */
+  margin-top: 2rem; /* Giảm khoảng cách trên */
+  padding: 2rem;
+  border-radius: 10px; /* Tăng độ cong viền */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+  width: 800px; /* Tự động mở rộng chiều ngang */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới */
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 2px solid #8758ff; /* Thay đổi độ dày và màu viền */
+  padding: 0.75rem 1rem; /* Tăng kích thước padding */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem; /* Giảm khoảng cách dưới */
+  width: 100%;
+  color: #333; /* Thay đổi màu chữ */
+  border-radius: 5px; /* Tăng độ cong viền */
+  transition: border-color 0.3s; /* Thêm hiệu ứng chuyển đổi cho viền */
+}
+
+.todo-input::placeholder {
+  color: #999; /* Thay đổi màu chữ placeholder */
+}
+
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem; /* Tăng kích thước padding */
+  cursor: pointer;
+  border-radius: 5px; /* Tăng độ cong viền */
+  transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển đổi cho nút */
+}
+
+.todo-btn:hover {
+  background: #7c48e8; /* Thay đổi màu nền hover */
+}
+
+.Todo {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #f9f9f9; /* Thay đổi màu nền */
+  color: #333; /* Thay đổi màu chữ */
+  padding: 1rem;
+  border-radius: 5px; /* Tăng độ cong viền */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
 }
 
-.App-link {
-  color: #61dafb;
+.fa-trash {
+  margin-left: 0.75rem;
+  color: #e74c3c; /* Thay đổi màu icon */
+  transition: color 0.3s; /* Thêm hiệu ứng chuyển đổi cho icon */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fa-trash:hover {
+  color: #c0392b; /* Thay đổi màu icon hover */
+}
+
+.incompleted,
+.completed {
+  cursor: pointer;
+}
+
+.completed {
+  color: #555; /* Thay đổi màu chữ cho mục đã hoàn thành */
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+  opacity: 0.8; /* Thay đổi độ trong suốt khi hover */
 }
