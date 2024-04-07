@@ -8,92 +8,91 @@
 }
 
 body {
-  background: #f0f0f0; /* Thay đổi màu nền */
+  background: #aec096; 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Đặt chiều cao của body là 100% chiều cao của viewport */
+  height: 100vh; 
 }
 
 .App {
   text-align: center;
-  max-width: 800px; /* Đặt khung rộng hơn */
-  width: 100%; /* Chắc chắn rằng khung không vượt quá kích thước tối đa */
-  padding: 0 15px; /* Thêm khoảng trắng bên trái và bên phải để giữ nội dung không quá rộng */
+  max-width: 800px; 
+  width: 100%; 
+  padding: 0 15px; 
 }
-
 h1 {
-  color: #333; /* Thay đổi màu chữ */
-  margin-bottom: 1rem; /* Tăng khoảng cách dưới */
-  font-size: 2rem; /* Tăng kích thước chữ */
+  color: #333;
+  margin-bottom: 1rem; 
+  font-size: 2rem;
 }
 
 .TodoWrapper {
-  background: #fff; /* Thay đổi màu nền */
-  margin-top: 2rem; /* Giảm khoảng cách trên */
+  background: #fff; 
+  margin-top: 2rem; 
   padding: 2rem;
-  border-radius: 10px; /* Tăng độ cong viền */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
-  width: 800px; /* Tự động mở rộng chiều ngang */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  width: 800px; 
 }
 
 
 .TodoForm {
   width: 100%;
-  margin-bottom: 1.5rem; /* Tăng khoảng cách dưới */
+  margin-bottom: 1.5rem; 
 }
 
 .todo-input {
   outline: none;
   background: none;
-  border: 2px solid #8758ff; /* Thay đổi độ dày và màu viền */
-  padding: 0.75rem 1rem; /* Tăng kích thước padding */
+  border: 2px solid #8758ff;
+  padding: 0.75rem 1rem; 
   margin-top: 1rem;
-  margin-bottom: 1.5rem; /* Giảm khoảng cách dưới */
+  margin-bottom: 1.5rem; 
   width: 100%;
-  color: #333; /* Thay đổi màu chữ */
-  border-radius: 5px; /* Tăng độ cong viền */
-  transition: border-color 0.3s; /* Thêm hiệu ứng chuyển đổi cho viền */
+  color: #333;
+  border-radius: 5px; 
+  transition: border-color 0.3s; 
 }
 
 .todo-input::placeholder {
-  color: #999; /* Thay đổi màu chữ placeholder */
+  color: #999; 
 }
 
 .todo-btn {
   background: #8758ff;
   color: #fff;
   border: none;
-  padding: 0.75rem 1rem; /* Tăng kích thước padding */
+  padding: 0.75rem 1rem; 
   cursor: pointer;
-  border-radius: 5px; /* Tăng độ cong viền */
-  transition: background-color 0.3s, color 0.3s; /* Thêm hiệu ứng chuyển đổi cho nút */
+  border-radius: 5px; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .todo-btn:hover {
-  background: #7c48e8; /* Thay đổi màu nền hover */
+  background: #7c48e8; 
 }
 
 .Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f9f9f9; /* Thay đổi màu nền */
-  color: #333; /* Thay đổi màu chữ */
+  background: #f9f9f9;
+  color: #333; 
   padding: 1rem;
-  border-radius: 5px; /* Tăng độ cong viền */
+  border-radius: 5px; 
   margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .fa-trash {
   margin-left: 0.75rem;
-  color: #e74c3c; /* Thay đổi màu icon */
-  transition: color 0.3s; /* Thêm hiệu ứng chuyển đổi cho icon */
+  color: #e74c3c; 
+  transition: color 0.3s;
 }
 
 .fa-trash:hover {
-  color: #c0392b; /* Thay đổi màu icon hover */
+  color: #c0392b; 
 }
 
 .incompleted,
@@ -102,7 +101,7 @@ h1 {
 }
 
 .completed {
-  color: #555; /* Thay đổi màu chữ cho mục đã hoàn thành */
+  color: #555; 
 }
 
 .edit-icon,
@@ -112,5 +111,55 @@ h1 {
 
 .edit-icon:hover,
 .delete-icon:hover {
-  opacity: 0.8; /* Thay đổi độ trong suốt khi hover */
+  opacity: 0.8; 
+}
+
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.confirm-btn,
+.cancel-btn {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: inline-block; 
+}
+.close-btn,
+.confirm-btn,
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.confirm-btn:hover,
+.cancel-btn:hover {
+  background-color: #cf2020;
+  color: #fff;
+}
+
+.todo-header {
+  color: #466cbe;
+  font-size: 2rem; 
+  text-align: center; 
+  margin-bottom: 2rem; 
 }
